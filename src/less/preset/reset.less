@@ -1,0 +1,19 @@
+html,
+body
+{
+	.height-percent(1);
+}
+
+a
+{
+	&[href]
+	{
+		.effect;
+
+		&:hover,
+		&:active
+		{
+			.color( @theme );
+		}
+	}
+}

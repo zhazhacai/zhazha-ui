@@ -1,0 +1,127 @@
+.unex-personal
+{
+	&,
+	& > .el-col
+	{
+		.height-percent( 1 );
+	}
+
+	& > .el-col
+	{
+		.relative;
+	}
+
+	.unex-personal-reunite,
+	.unex-personal-cube
+	{
+		.float-right;
+
+		.central-y;
+		.right( 1rem );
+	}
+
+	.unex-personal-reunite
+	{
+	}
+
+	.unex-personal-cube
+	{
+	}
+
+	.unex-personal-info
+	{
+
+		@distance: 3rem;
+
+		&
+		{
+			.padding-right( 1rem );
+		}
+
+		img,
+		i[class^=image-],
+		i[class^=unex-icon-avatar]
+		{
+			.block;
+			.width-percent(1);
+			.height-percent(1);
+
+			.circle;
+			.shadow( 0 .125rem .25rem rgba(0, 0, 0, .5) );
+		}
+		i[class^=unex-icon-avatar]
+		{
+			.size( @distance );
+			.line-height( @distance );
+		}
+
+		span
+		{
+			.float-left;
+			.width( @distance );
+			.height( @distance );
+		}
+		div
+		{
+			.hand;
+			.padding-left( @distance + .5 );
+			.padding-right( .5rem );
+
+			.relative;
+
+			h4,
+			small
+			{
+				.text-keep;
+				.line-height( @distance / 2 );
+			}
+			h4
+			{
+				.color( @dark );
+
+				&.unex-personal-name-single
+				{
+					.line-height( @distance );
+				}
+			}
+		}
+		i[class^=unex-icon-dropdown]
+		{
+			.effect( all, @fast, linear, @flash );
+
+			.float-right;
+			.right;
+
+			.absolute;
+			.top( 50% );
+
+			.margin-top( -.5rem );
+		}
+	}
+
+	.unex-arrow-reverse
+	{
+		.rotate( 180deg );
+	}
+}
+.unex-personal-dropdown
+{
+	li
+	{
+		.padding-horizontal;
+
+		&.el-dropdown-menu__item--divided
+		{
+			&:before
+			{
+				.margin-horizontal;
+			}
+		}
+	}
+	a
+	{
+		.padding-horizontal( @size-20 );
+		.block;
+		.color( @dark );
+	}
+}

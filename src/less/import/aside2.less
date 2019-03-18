@@ -1,0 +1,407 @@
+/* ===== ===== ===== Menu ===== ===== ===== */
+
+@navy: #262A39;
+@sWhite: rgba(255, 255, 255, 0.6);
+@sBlack: rgba(0, 0, 0, 0.25);
+@sBlack2: #1d202b;
+@nWidth: 240px; // normal width
+@nHeight: 48px; // normal height
+@iconbox: 56px;
+@mWidth: 152px; // mini width
+@mHeight: 48px; // mini height
+
+// hover highlight
+.hoverStyle {
+  color: #ffffff;
+}
+
+.menu-tree-component {
+  width: @nWidth;
+  background-color: @navy;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 1999; // 区间(99,199)
+  box-shadow: 0 0 8px 0;
+  .clear-fl:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  .tree-head {
+  }
+  .title {
+    width: 100%;
+    color: @sWhite;
+    padding: 29px 6px 0 15px;
+    height: 100%;
+  }
+  .logo {
+    font-size: 0;
+    text-align: center;
+    img {
+      width: 36px;
+    }
+  }
+  h1 {
+    text-align: center;
+    background-color: transparent;
+    margin: 16px auto 18px auto;
+    width: 130px;
+    color: white;
+    font-size: 17px;
+    line-height: 13px;
+    font-weight: bold;
+    font-style: oblique;
+  }
+  .title-line {
+    padding-top: 6px;
+    height: @iconbox;
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+      img {
+        width: 28px;
+      }
+    }
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0;
+      margin-left: 6px;
+    }
+  }
+  .parent {
+    color: @sWhite;
+    height: @iconbox;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 8px;
+    &:hover {
+      &:extend(.hoverStyle);
+    }
+    span {
+      display: inline-flex;
+      width: @iconbox;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    i {
+      font-size: 1.2em;
+      transform: rotate(90deg);
+    }
+  }
+  .list-box {
+    //flex: 1;
+    display: flex;
+    position: relative;
+    li {
+      height: @nHeight;
+    }
+  }
+  .icon-box {
+    width: @iconbox;
+    overflow: hidden;
+    li {
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .menu-list {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    &.visited {
+      overflow-y: auto;
+      padding-bottom: 56px; // 底部setting
+    }
+    &::-webkit-scrollbar { /*滚动条整体样式*/
+      width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
+      height: 10px;
+    }
+    &::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      border-right: 2px solid @navy;
+    }
+    &::-webkit-scrollbar-track { /*滚动条里面轨道*/
+      //box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      //border-radius: 1px;
+      //background: #A7A8AE;
+    }
+    ul {
+      position: relative;
+      width: 100%;
+    }
+  }
+  .settings {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .btn-group {
+      display: flex;
+      color: #fff;
+      border-top: 1px solid #000000;
+      background-color: @navy;
+      position: relative;
+      transition: 0.3s;
+    }
+    .setting {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.6);
+      &:hover {
+        &:extend(.hoverStyle);
+      }
+      &.opened-style {
+        &:extend(.hoverStyle);
+      }
+      .icon-wrap {
+        display: flex;
+        width: @iconbox;
+        height: @iconbox;
+        align-items: center;
+        justify-content: center;
+        i {
+          font-size: 1.5em;
+        }
+      }
+      .text {
+        flex: 1;
+      }
+    }
+    .history {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .history-hover {
+      .history {
+        background-color: @sBlack2;
+      }
+      box-shadow: none;
+    }
+    .top {
+      color: #fff;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      padding-left: 16px;
+      padding-right: 16px;
+      line-height: 16px;
+      justify-content: space-between;
+      .edit {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+    .history-list {
+      padding-left: 0;
+      position: relative;
+      background-color: @sBlack2;
+      transform-origin: 0 50%;
+      .history-list-inner {
+        background-color: @sBlack2;
+      }
+      ul li {
+        color: rgba(255, 255, 255, 0.6);
+        height: @mHeight;
+        line-height: @mHeight;
+        font-size: 12px;
+        align-items: center;
+        padding-left: 24px;
+        cursor: pointer;
+        &.history-item {
+          &.hover-style {
+            &:extend(.hoverStyle);
+          }
+          &.opened-style {
+            background-color: rgba(0, 0, 0, 0.25);
+            &:extend(.hoverStyle);
+          }
+        }
+      }
+    }
+    .history-list-collapsed {
+      left: @iconbox;
+      width: @mWidth;
+      bottom: -(2 * @iconbox + 1);
+      background-color: transparent;
+    }
+
+  }
+  li {
+    &.menu-item, &.icon-item {
+      &.opened-style {
+        background-color: rgba(0, 0, 0, 0.25);
+        &:extend(.hoverStyle);
+      }
+    }
+    &.menu-item {
+      &.hover-style {
+        &:extend(.hoverStyle);
+      }
+    }
+    &.icon-item {
+      &.hover-style {
+        &:extend(.hoverStyle);
+      }
+    }
+  }
+
+  .hisanima-enter, .hisanima-leave-to {
+    transform: translateY(100%);
+  }
+  .hisanima-enter-active, .hisanima-leave-active {
+    transition: 0.3s ease;
+  }
+  .hisanima-enter-to, .hisanima-leave {
+    transform: translateY(0);
+  }
+
+  .hisanimaMini-enter, .hisanimaMini-leave-to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  .hisanimaMini-enter-active, .hisanimaMini-leave-active {
+    transition: 0.3s ease;
+  }
+  .hisanimaMini-enter-to, .hisanimaMini-leave {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.menu-tree-component-collapsed {
+  width: @iconbox;
+  .tree-head {
+    height: @iconbox;
+  }
+  .title {
+    padding-top: 14px;
+    height: @iconbox;
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+      img {
+        width: 28px;
+      }
+    }
+    h1 {
+      .titleText {
+        display: none;
+      }
+      display: none;
+    }
+  }
+  .settings {
+    .btn-group {
+      display: block;
+      .setting {
+        display: block;
+        .text {
+          display: block;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+/* ===== ===== ===== Menu List ===== ===== ===== */
+
+.menu-list-component {
+  &.visited {
+    .list li {
+      padding: 0 16px 0 56px;
+      &.menu-item {
+        &.hover-style {
+          padding: 0 14px 0 56px;
+        }
+      }
+    }
+  }
+  .list li {
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 16px 0 0;
+    &.menu-item {
+      &.hover-style {
+        padding: 0 14px 0 0; // 调整箭头
+      }
+    }
+    .text {
+      flex: 1;
+    }
+    .icon {
+      transform: rotate(-90deg);
+      i {
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+
+.menu-list-mini-component {
+  width: @mWidth;
+  position: absolute;
+  padding-left: 4px;
+  transition: 0.3s;
+  transform-origin: 0 50%;
+  .list {
+    background-color: #262A39;
+    color: rgba(0, 0, 0, 1);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px 0;
+  }
+  .list li {
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 16px;
+    height: @mHeight;
+    &.menu-item {
+      &.hover-style {
+        padding: 10px 14px 10px 16px; // 调整箭头
+      }
+    }
+    &.hover-color {
+      &:extend(.hoverStyle);
+    }
+    .text {
+      flex: 1;
+      font-family: SFProDisplay-Medium;
+      font-size: 14px;
+      line-height: 14px;
+    }
+    .icon {
+      transform: rotate(-90deg);
+      i {
+        font-size: 0.5em;
+      }
+    }
+  }
+  .hover-mini:hover {
+    background-color: rgba(0, 0, 0, .25)
+  }
+}

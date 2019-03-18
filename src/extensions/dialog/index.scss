@@ -1,0 +1,68 @@
+.unex-dialog{
+  .el-dialog__header{
+    height: 56px;
+    line-height: 55px;
+    padding: 0 24px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  .el-dialog__title{
+    font-size: 16px;
+    color: #333333;
+  }
+  .el-dialog__close{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .el-dialog__body{
+    padding: 0 24px;
+  }
+  .el-dialog__footer{
+    padding: 12px 24px;
+    text-align: left;
+    border-top: 1px solid #E8E8E8;
+  }
+}
+.unex-right-dialog{
+  &.dialog-fade-enter-active{
+    animation:dialog-side-fade-in .3s;
+  }
+  &.dialog-fade-leave-active{
+    animation:dialog-side-fade-out .3s;
+  }
+  @keyframes dialog-side-fade-in{
+    0%{transform:translate3d(100%,0,0);opacity:0}
+    100%{transform:translate3d(0,0,0);opacity:1}
+  }
+  @keyframes dialog-side-fade-out{
+    0%{transform:translate3d(0,0,0);opacity:1}
+    100%{transform:translate3d(100%,0,0);opacity:0}
+  }
+  .unex-dialog-wrap{
+    height: 100%;
+    margin-bottom: 0;
+    margin-right: 0;
+    border-radius: 0;
+    transform: none;
+    -webkit-transform: none;
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: column;
+    &.unex-dialog-wrap--mini{
+      width: 360px
+    }
+    &.unex-dialog-wrap--small{
+      width: 540px
+    }
+    &.unex-dialog-wrap--medium{
+      width: 720px
+    }
+    &.unex-dialog-wrap--large{
+      width: 900px
+    }
+  }
+  .el-dialog__body{
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+.unex-center-dialog{}

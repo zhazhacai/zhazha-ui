@@ -1,0 +1,40 @@
+{
+  "name": "@baozun/unex-ui",
+  "version": "3.0.3",
+  "description": "A ui-library for Unex",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "unex-staff-cli"
+  ],
+  "author": "Baozun TIC - ZhaZha",
+  "license": "MIT",
+  "dependencies": {
+    "@cafee/component": "^1.0.3",
+    "@cafee/design": "^1.1.5",
+    "@cafee/staff": "^1.0.12",
+    "animate.css": "^3.7.0",
+    "importz": "^1.0.10",
+    "less-extend": "^2.0.24",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1",
+    "vue-i18n": "^8.0.0",
+    "element-ui": "^2.3.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-service": "^3.1.4",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "unex-ui": "^1.1.69",
+    "vue-template-compiler": "^2.5.17"
+  }
+}

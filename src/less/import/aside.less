@@ -1,0 +1,324 @@
+/* !!
+ * Constant
+ * === === ===
+ */
+.unex-aside
+{
+
+@aside-crack: 4rem;
+@aside-shadow: rgba( 0, 0, 0, .125 );
+
+@aside-text: @stagnant;
+@aside-text-hover: @torrential;
+@aside-background-hover: shade( @aside-background-side, @alpha-week );
+
+@aside-background-side: @theme;
+@aside-background-main: @deepest;
+
+
+	/* Reset Element-UI Style */
+	.el-collapse-item
+	{
+		&.is-active
+		{
+			.el-collapse-item__header
+			{
+				.el-collapse-item__arrow
+				{
+					.rotate( 0deg );
+				}
+			}
+
+			& > div[role=tab]
+			{
+				.el-collapse-item__header
+				{
+					.el-collapse-item__arrow
+					{
+						.rotate( 90deg );
+					}
+				}
+			}
+		}
+	}
+
+	.el-menu-item-group__title
+	{
+		.padding;
+	}
+
+	.el-menu
+	{
+		.background-color( @transparent );
+	}
+
+	.el-submenu
+	{
+		.el-menu-item
+		{
+			.width-min( 3 * @aside-crack );
+			.padding-right;
+
+			a
+			{
+				.inline-block;
+				.margin-left( -100% );
+				.padding-left( 100% );
+				.padding-right( 100% );
+			}
+		}
+	}
+
+	.el-icon-arrow-down
+	{
+		&:before
+		{
+			.content('\E60B');
+		}
+	}
+
+	ul
+	{
+		.border-right;
+	}
+
+
+	/* Unex Aside Css */
+	&
+	{
+		.effect;
+		.height-percent( 1 );
+	}
+
+	// Aside Collapse
+	&.unex-aside-collapse
+	{
+		.width( @aside-crack ) !important;
+
+		.unex-aside-container
+		{
+			i
+			{
+				.pene;
+			}
+		}
+	}
+
+	// Shadow Craft
+	.craft
+	{
+		.unex-text,
+		i[class^='unex-icon-']
+		{
+			.effect;
+		}
+
+		&:hover,
+		&:focus,
+		&.is-active
+		{
+			.background-color( @aside-background-hover );
+			.shadow-in( .125rem 0 .25rem @aside-shadow );
+
+			.unex-text,
+			i[class^='unex-icon-']
+			{
+				&,
+				a
+				{
+					.color( @aside-text-hover );
+				}
+			}
+		}
+	}
+
+	// Icon Interface
+	.icon-effect
+	{
+		.effect;
+		.hand;
+
+		.color( @aside-text );
+
+		&:hover
+		{
+			.color( @aside-text-hover );
+		}
+	}
+
+	.el-submenu
+	{
+		&.is-active
+		{
+
+		}
+	}
+
+	.el-submenu__title,
+	.el-menu-item
+	{
+		.craft;
+
+		.relative;
+		.z( 10 );
+
+		i[class^='unex-icon-']
+		{
+			.absolute;
+			.left( -( @aside-crack / 2 ) );
+			.margin-left( -.5rem );
+		}
+	}
+
+	.el-container
+	{
+		.height-percent( 1 );
+	}
+
+	.el-aside
+	{
+		.background-color( @aside-background-side );
+	}
+	.el-main
+	{
+		.background-color( @aside-background-main );
+	}
+
+	.unex-text
+	{
+		&,
+		i,
+		a
+		{
+			.color( @aside-text );
+		}
+	}
+
+	.unex-aside-header,
+	.unex-aside-container,
+	.el-main
+	{
+		.padding;
+	}
+
+	// Unex Aside Header
+	.unex-aside-header
+	{
+		.relative;
+		.z( 9 );
+		.shadow( 0 .25rem 1rem @aside-shadow );
+
+		i,
+		a,
+		span
+		{
+			.size( @size-18 );
+		}
+
+		.el-aside
+		{
+			.relative;
+			.hand;
+
+			i
+			{
+				.central;
+				.icon-effect;
+			}
+		}
+		.el-main
+		{
+			.hidden;
+			.relative;
+
+			span, a
+			{
+				.central-y;
+				.italic;
+				.padding-horizontal( @size-20 );
+				.bold;
+				.color( @pure );
+			}
+		}
+	}
+
+	// Unex Aside Container
+	.unex-aside-container
+	{
+		.hidden;
+
+		.el-aside
+		{
+			.relative;
+			.z( 8 );
+			.shadow( .25rem 0 1rem @aside-shadow );
+		}
+		.el-main
+		{
+			.relative;
+			.background-color( @aside-background-main );
+
+			&:before
+			{
+				.content;
+
+				.absolute;
+				.top;
+				.bottom;
+				.left;
+				.width( @aside-crack );
+				.background-color( @aside-background-side );
+			}
+		}
+
+		a
+		{
+			.block;
+		}
+	}
+
+	// For Special Issue
+	.unex-pin
+	{
+		.height-min( 100% );
+		.height-max( 100% );
+		.padding-left( @aside-crack );
+		.scroll-y;
+
+		.el-menu
+		{
+			.height-min( 100% );
+
+			li.el-menu-item-group
+			{
+				& > ul
+				{
+					.background-color( rgba( 0, 0, 0, .075 ) );
+				}
+			}
+		}
+
+		// Scroll
+		@pin: 8px;
+
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-thumb
+		{
+			.width( @pin );
+		}
+
+		&::-webkit-scrollbar-track
+		{
+			.background-color( #262e48 );
+		}
+
+		&::-webkit-scrollbar-thumb
+		{
+			.radius( @pin );
+			.background-color( rgba( 0, 0, 0, .6 ) );
+		}
+
+	}
+
+}
